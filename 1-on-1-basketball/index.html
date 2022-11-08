@@ -1,2 +1,11 @@
-<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-<ruffle-object xmlns="http://www.w3.org/1999/xhtml" data="https://www-sites-opensocial.googleusercontent.com/gadgets/proxy/refresh=600&amp;container=enterprise/https://c10b0299-a-62cb3a1a-s-sites.googlegroups.com/site/2345asdffe346/one_on_one_basketball.swf" height="800" type="application/x-shockwave-flash" width="10000"><param name="wmode" value="direct"></ruffle-object>
+<script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.addEventListener("load", (event) => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        const container = document.getElementById("container");
+        container.appendChild(player);
+        player.load("https://www-sites-opensocial.googleusercontent.com/gadgets/proxy/refresh=600&container=enterprise/https://c10b0299-a-62cb3a1a-s-sites.googlegroups.com/site/2345asdffe346/one_on_one_basketball.swf");
+    });
+</script>
+<script src="https://unpkg.com/@ruffle-rs/ruffle@0.1.0-nightly.2022.11.8/ruffle.js></script>
