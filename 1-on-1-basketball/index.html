@@ -17,7 +17,12 @@ swfobject.embedSWF = function(url, cont, width, height){
             style: 'width: ' + width + 'px; height: ' + height + 'px',
         });
     
-    player.load({ url: url });
+    player.load({ url: url }).then(() => {
+    console.info("Ruffle successfully loaded the file");
+    enterFullscreen();
+}).catch((e) => {
+    console.error(`Ruffle failed to load the file: ${e}`);
+});
 }
 
 swfobject.embedSWF('./one_on_one_basketball.swf', 'ruffle', 800, 1000);
