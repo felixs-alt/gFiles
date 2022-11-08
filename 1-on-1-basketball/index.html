@@ -19,7 +19,7 @@ swfobject.embedSWF = function(url, cont, width, height){
     
     player.load({ url: url }).then(() => {
     console.info("Ruffle successfully loaded the file");
-    enterFullscreen();
+    player.enterFullscreen();
 }).catch((e) => {
     console.error(`Ruffle failed to load the file: ${e}`);
 });
