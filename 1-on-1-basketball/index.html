@@ -3,9 +3,13 @@
     <head>
         <meta charset='utf8'>
         <style>
+      .container {
+        display: flex;
+        justify-content: center;
+      }
       body {
         padding: 25px;
-        background-color: white;
+        background-color: black;
         color: black;
         font-size: 25px;
       }
@@ -20,7 +24,9 @@
     </style>
     </head>
     <body>
-        <div style="width:800px; margin:0 auto;" id='ruffle' allowfullscreen="true"></div>
+        <div class="container">
+            <div id='ruffle'></div>
+        </div>
         <script src='https://e9x.github.io/ruffle-example/ruffle.js'></script>
         <script>
 var swfobject = {};
