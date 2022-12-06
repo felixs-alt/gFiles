@@ -1,0 +1,40 @@
+<body onload="canvasUpdate();">
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Evolution | 3kh0</title>
+    <link rel="icon" href="icon.png">
+    <script src="Build/UnityLoader.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Evolution.json");
+    </script>
+  </head>
+  <body>
+    <div id="gameContainer" style="width: 960px; height: 600px; margin: auto;"></div>
+  </body>
+</html>
+  
+<script>
+elem = document.getElementById("#canvas");
+elem.onclick = function(){openFullscreen()};
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+};
+function canvasUpdate() {
+elem.width = window.innerWidth
+elem.height = window.innerHeight
+
+}
+
+
+</script>
+</body>
