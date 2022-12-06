@@ -1,24 +1,25 @@
-
-    <canvas class="emscripten" id="myCanvas" height="651px" width="811px"></canvas>
+<body onload="canvasUpdate();">
+    <canvas class="emscripten" id="canvas"></canvas>
     <script type="text/javascript">
       var Module = {
         TOTAL_MEMORY: 268435456,
-        errorhandler: null, // argum ents: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+        errorhandler: null, // arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
         compatibilitycheck: null,
         backgroundColor: "#222C36",
         splashStyle: "Dark",
-        dataUrl: "/3kh0-V2/projects/cluster-rush/Release/NG.data",
-        codeUrl: "/3kh0-V2/projects/cluster-rush/Release/NG.js",
-        asmUrl: "/3kh0-V2/projects/cluster-rush/Release/NG.asm.js",
-        memUrl: "/3kh0-V2/projects/cluster-rush/Release/NG.mem",
+        dataUrl: "https://felixs-alt.github.io/3kh0-V2/projects/cluster-rush/Release/NG.data",
+        codeUrl: "https://felixs-alt.github.io/3kh0-V2/projects/cluster-rush/Release/NG.js",
+        asmUrl: "https://felixs-alt.github.io/3kh0-V2/projects/cluster-rush/Release/NG.asm.js",
+        memUrl: "https://felixs-alt.github.io/3kh0-V2/projects/cluster-rush/Release/NG.mem",
       };
       console.log("If the file NG.mem returns a 404 error, that is ok!")
     </script>
     <script src="https://felixs-alt.github.io/3kh0-V2/projects/cluster-rush/Release/UnityLoader.js"></script>
  	</script>
-
+  
 <script>
-elem = document.getElementById("myCanvas");
+elem = document.getElementById("canvas");
+elem.onclick = function(){openFullscreen()};
 function openFullscreen() {
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
@@ -27,7 +28,13 @@ function openFullscreen() {
   } else if (elem.msRequestFullscreen) { /* IE11 */
     elem.msRequestFullscreen();
   }
+};
+function canvasUpdate() {
+elem.width = window.innerWidth
+elem.height = window.innerHeight
+
 }
 
 
 </script>
+</body>
